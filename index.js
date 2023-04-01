@@ -7,6 +7,7 @@ const port = 4500;
 
 app.use(cors());
 app.use(express.json());
+app.use("/static", express.static("images"));
 
 const mydb = mysql.createConnection({
   host: "localhost",
