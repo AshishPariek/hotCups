@@ -116,7 +116,7 @@ app.post("/hotcup/admin/login", (req, res) => {
   const sqlCheck = "select email,password,id from users where email=?";
   const { email, password } = req.body;
   mydb.query(sqlCheck, email, (err, result) => {
-    err ? console.log("Error", err) : console.log("Login Ok");
+    err ? console.log("Error :", err) : console.log("Login Ok");
     if (result[0]?.email === email) {
       const isPasswordMatched = bcrypt.compareSync(
         password,
